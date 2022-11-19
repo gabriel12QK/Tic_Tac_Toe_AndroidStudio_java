@@ -2,9 +2,12 @@ package com.example.tic_tac_toe_java;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,6 +19,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button resetGame;
     private int playerOneScoreCount, playerTwoScoreCount,rountCount;
     boolean activePlayer;
+
+
+
     int [] gameState={2,2,2,2,2,2,2,2,2};
 
         int[][]winningPosition={
@@ -69,17 +75,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (activePlayer){
                 playerOneScoreCount++;
                 updatePlayerScore();
-                Toast.makeText(this, "player One Ganador",Toast.LENGTH_LONG).show();
-                playAgain();
+                 Dialog_winner dialog_winner= new Dialog_winner(MainActivity.this,"player One win", MainActivity.this);
+                    dialog_winner.show();
+                 //Toast.makeText(this, "player One Ganador",Toast.LENGTH_LONG).show();
             }else{
                 playerTwoScoreCount++;
                 updatePlayerScore();
-                Toast.makeText(this, "player Two Ganador",Toast.LENGTH_LONG).show();
-                playAgain();
+                Dialog_winner dialog_winner= new Dialog_winner(MainActivity.this,"player Two win", MainActivity.this);
+                dialog_winner.show();
             }
         }else if (rountCount==9){
-             playAgain();
-             Toast.makeText(this,"Empate",Toast.LENGTH_LONG).show();
+            Dialog_winner dialog_winner= new Dialog_winner(MainActivity.this,"Sin ganador", MainActivity.this);
+            dialog_winner.show();
         }else{
             activePlayer= !activePlayer;
         }
