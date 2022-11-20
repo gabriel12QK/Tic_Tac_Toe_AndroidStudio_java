@@ -203,7 +203,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/reset"
                 android:layout_width="357dp"
                 android:layout_height="wrap_content"
@@ -211,10 +211,10 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#E1470D"
+                android:background="@drawable/style_button"
                 android:onClick="onClick"
                 android:text="Reset Game"
-                android:textColor="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -230,7 +230,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -242,13 +242,16 @@
 
 
             <LinearLayout
+                android:id="@+id/playerOneLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="15dp">
 
                 <TextView
                     android:id="@+id/PlayerOne"
+                    android:maxLines="1"
                     android:layout_width="168dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -257,7 +260,7 @@
                     android:text="Player One"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#436A88"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -283,6 +286,8 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/playerTwoLayout"
+                android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -290,6 +295,7 @@
 
                 <TextView
                     android:id="@+id/PlayerTwo"
+                    android:maxLines="1"
                     android:layout_width="168dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -298,7 +304,7 @@
                     android:text="Player Two"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#436A88"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

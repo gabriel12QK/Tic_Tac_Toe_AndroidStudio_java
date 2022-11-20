@@ -13,12 +13,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView playerOneScore, playerTwoScore, playerStatus;
+    private TextView playerOneScore, playerTwoScore, playerStatus,playerOne,playerTwo;
     private Button[] buttons = new Button[9];
     private Button resetGame;
     private int playerOneScoreCount, playerTwoScoreCount,rountCount;
     boolean activePlayer;
+
+   // private final List<int[]> combinationList=new ArrayList<>();
 
 
 
@@ -30,6 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {0,4,8},{2,4,6}//diagonales
         };
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playerTwoScore = (TextView) findViewById(R.id.PlayerTwoScore);
         playerStatus=(TextView) findViewById(R.id.PlayerStatus);
         resetGame=(Button) findViewById(R.id.reset);
+        playerOne=findViewById(R.id.PlayerOne);
+        playerTwo=findViewById(R.id.PlayerTwo);
 
 
          for(int i=0;i<buttons.length;i++){
@@ -50,7 +61,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          playerOneScoreCount=0;
          playerTwoScoreCount=0;
          activePlayer=true;
+
+
+        final String getPlayerOneName=getIntent().getStringExtra("Jugador1");
+        final String getPlayerTwoName=getIntent().getStringExtra("Jugador2");
+        playerOne.setText(getPlayerOneName);
+        playerTwo.setText(getPlayerTwoName);
+
     }
+
+
 
     @Override
     public void onClick(View v) {
