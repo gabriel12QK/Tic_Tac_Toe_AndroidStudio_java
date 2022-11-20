@@ -338,6 +338,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:maxLines="3"
                 android:id="@+id/PlayerStatus"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"

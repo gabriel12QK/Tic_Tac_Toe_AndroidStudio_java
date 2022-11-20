@@ -97,23 +97,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 updatePlayerScore();
                  Dialog_winner dialog_winner= new Dialog_winner(MainActivity.this,"Ganador "+playerOne.getText().toString(), MainActivity.this);
                     dialog_winner.show();
+                    playAgain();
                  //Toast.makeText(this, "player One Ganador",Toast.LENGTH_LONG).show();
             }else{
                 playerTwoScoreCount++;
                 updatePlayerScore();
                 Dialog_winner dialog_winner= new Dialog_winner(MainActivity.this,"Ganador "+ playerTwo.getText().toString(), MainActivity.this);
                 dialog_winner.show();
+                playAgain();
             }
         }else if (rountCount==9){
             Dialog_winner dialog_winner= new Dialog_winner(MainActivity.this,"Sin ganador", MainActivity.this);
             dialog_winner.show();
+            playAgain();
         }else{
             activePlayer= !activePlayer;
         }
         if (playerOneScoreCount>playerTwoScoreCount){
-            playerStatus.setText("Player One is Winning");
+            playerStatus.setText( playerOne.getText().toString()+" va Ganando");
         }else if(playerTwoScoreCount>playerOneScoreCount) {
-            playerStatus.setText("Player Two is Winning");
+            playerStatus.setText( playerTwo.getText().toString()+" va Ganando");
         }else {
             playerStatus.setText("");
         }
