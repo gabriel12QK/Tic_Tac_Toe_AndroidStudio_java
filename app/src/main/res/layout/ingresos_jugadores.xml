@@ -43,7 +43,9 @@
                 android:text="Ingrese Nombre de Jugadores"
                 android:textSize="20dp"
                 android:gravity="center"
-                android:textColor="#436A88"
+                android:shadowRadius="30"
+                android:shadowColor="#EC05E8"
+                android:textColor="#1A191B"
                 android:fontFamily="@font/alfa_slab_one"
                 />
             <LinearLayout
@@ -62,7 +64,7 @@
                     android:background="#1E1E1E"
                     android:text="X"
                     android:textSize="30dp"
-                    android:textColor="#FFC34A"
+                    android:textColor="#F13423"
                     android:textStyle="bold"
                     android:gravity="center"
 
@@ -78,10 +80,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="Jugador numero 1"
-                    android:textColor="#4985B3"
+                    android:textColor="#5510CF"
                     android:textStyle="normal"
                     android:background="@drawable/name_inputs"
-                    android:textColorHint="#4985B3"
+                    android:textColorHint="#5510CF"
                     />
             </LinearLayout>
 
@@ -100,7 +102,7 @@
                     android:background="#1E1E1E"
                     android:text="O"
                     android:textSize="30dp"
-                    android:textColor="#70FFEA"
+                    android:textColor="@color/Color4"
                     android:textStyle="bold"
                     android:gravity="center"
 
@@ -116,10 +118,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="Jugador numero 2"
-                    android:textColor="#4985B3"
+                    android:textColor="#5510CF"
                     android:textStyle="normal"
                     android:background="@drawable/name_inputs"
-                    android:textColorHint="#4985B3"
+                    android:textColorHint="#5510CF"
                     />
             </LinearLayout>
 

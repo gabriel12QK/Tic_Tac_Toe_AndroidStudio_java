@@ -81,11 +81,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       int gameStatePointer = Integer.parseInt(buttonID.substring(buttonID.length()-1,buttonID.length()));
         if (activePlayer){
             ((Button)v).setText("X");
-            ((Button)v).setTextColor(Color.parseColor("#FFC34A"));
+            ((Button)v).setTextColor(Color.parseColor("#F13423"));
             gameState[gameStatePointer]=0;
         }else{
             ((Button)v).setText("O");
-            ((Button)v).setTextColor(Color.parseColor("#70FFEA"));
+            ((Button)v).setTextColor(Color.parseColor("#0054D1"));
             gameState[gameStatePointer]=1;
         }
 
@@ -107,8 +107,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 playAgain();
             }
         }else if (rountCount==9){
-            Dialog_winner dialog_winner= new Dialog_winner(MainActivity.this,"Sin ganador", MainActivity.this);
-            dialog_winner.show();
+           /* Dialog_winner dialog_winner= new Dialog_winner(MainActivity.this,"Sin ganador", MainActivity.this);
+            dialog_winner.show();*/
+            Dialog_empate dialog_empate= new Dialog_empate(MainActivity.this,"Sin ganador", MainActivity.this);
+            dialog_empate.show();
             playAgain();
         }else{
             activePlayer= !activePlayer;
